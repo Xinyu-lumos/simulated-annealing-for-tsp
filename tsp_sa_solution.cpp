@@ -411,8 +411,8 @@ void Solution::localSearch() {
     
 }
 
-string Solution::getRoute() {
-    stringstream route;
+std::string Solution::getRoute() {
+    std::stringstream route;
     route << "0";
     int curr_p = 0;
     for (int i = 0; i < this->num_nodes; i++) {
@@ -425,5 +425,5 @@ string Solution::getRoute() {
         }
     }
 
-    return string(route.str());
+    return std::string(route.str());
 }

@@ -1,15 +1,15 @@
-#ifndef SA_TSP_TSP_LOG_H
-#define SA_TSP_TSP_LOG_H
-
+#pragma once
 #include <string>
 
 const int LogLevelSize = 4;
 enum LogLevel { debug, info, warning, error };
-const std::string LogLevelString[LogLevelSize] = {
+const std::string LogLevelString[LogLevelSize] =
+{
         "DEBUG", "INFO", "WARN", "ERROR"
 };
 
-class TspLogger {
+class TspLogger
+{
     bool printStatus = true;
 public:
     LogLevel level;
@@ -25,4 +25,4 @@ public:
 void setLogLevel(LogLevel l);
 TspLogger &tsplog(LogLevel n);
 
-#endif //SA_TSP_TSP_LOG_H
+

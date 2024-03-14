@@ -21,8 +21,10 @@ void print_help(string executable) {
     tsplog(info) << "\t" << "-l --loglevel" << "\t\t\t" << "loglevel(debug, info, warn, error), default is info." << TspLogger::endl;
 }
 
-int main (int argc, char* argv[]) {
-    static struct option longOptions[] = {
+int main (int argc, char* argv[]) 
+{
+    static struct option longOptions[] = 
+    {
             {"help",           no_argument,       0, 'h'},
             {"tspfile",        required_argument, 0, 't'},
             {"optfile",        optional_argument, 0, 'p'},
@@ -39,7 +41,8 @@ int main (int argc, char* argv[]) {
 
     int argopt, optionIndex = 0;
     int argcnt = 0;
-    while ((argopt = getopt_long(argc, argv, "h:t:l:p:v:r:", longOptions, &optionIndex)) != -1) {
+    while ((argopt = getopt_long(argc, argv, "h:t:l:p:v:r:", longOptions, &optionIndex)) != -1) 
+    {
         argcnt ++;
         switch (argopt) {
             case 't': filename = string(optarg); break;
@@ -69,7 +72,8 @@ int main (int argc, char* argv[]) {
     }
 
     ifstream fin;
-    try {
+    try 
+    {
         tsplog(info) << "Read " << filename << TspLogger::endl;
         fin.open(filename.data());
     } catch (exception e) {
@@ -85,7 +89,8 @@ int main (int argc, char* argv[]) {
     // Start to read tsp file
     int dimension = 0;
     float** xy = NULL;
-    while (!fin.eof()) {
+    while (!fin.eof())
+    {
         if (xy == NULL) {
             // Read meta data
             string segment;
@@ -141,7 +146,8 @@ int main (int argc, char* argv[]) {
     fin.close();
 
     // if optimal solution provided
-    if (optname.size() > 0) {
+    if (optname.size() > 0) 
+    {
         cout << endl;
 
         try {

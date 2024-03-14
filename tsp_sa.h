@@ -1,10 +1,6 @@
-#ifndef tsp_sa_tsp_sa_h
-#define tsp_sa_tsp_sa_h
+#pragma once
 
 #include <cstring>
-
-using namespace std;
-
 const int BIGM = 9999999;
 const int NUMOPT = 2;
 const int NUMVI = 3;
@@ -40,7 +36,7 @@ public:
     float getlength();
     void setlength();
 
-    string getRoute();
+    std::string getRoute();
 
     /* New Solution Generating Functions */
     void setInit();
@@ -118,4 +114,4 @@ public:
     void setBestSolution_init();
 };
 
-#endif
+
